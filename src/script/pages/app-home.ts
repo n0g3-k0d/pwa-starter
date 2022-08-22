@@ -109,12 +109,12 @@ export class AppHome extends LitElement {
   }
 
   iosPermission() {
-    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['push-permission-request']) {
-      window.webkit.messageHandlers['push-permission-request'].postMessage('push-permission-request');
+    if ((window as any).webkit && (window as any).webkit.messageHandlers && (window as any).messageHandlers['push-permission-request']) {
+      (window as any).messageHandlers['push-permission-request'].postMessage('push-permission-request');
     }
     window.addEventListener('push-permission-request', (message) => {
-      if (message && message.detail){
-        switch (message.detail) {
+      if (message && (message as any).detail){
+        switch ((message as any).detail) {
           case 'granted':
             // permission granted
             break;
