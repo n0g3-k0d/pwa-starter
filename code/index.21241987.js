@@ -210,7 +210,7 @@ found at http://polymer.github.io/PATENTS.txt
           border: none;
         }
       }
-    `}async firstUpdated(){console.log("This is your home page")}share(){navigator.share&&navigator.share({title:"PWABuilder pwa-starter",text:"Check out the PWABuilder pwa-starter!",url:"https://github.com/pwa-builder/pwa-starter"})}notification(){Notification.requestPermission().then(n=>{n==="granted"&&new Notification("title",{body:"looks good",icon:"public/kisfaludy_favicon_gold.png"})})}render(){return Q`
+    `}async firstUpdated(){console.log("This is your home page")}share(){navigator.share&&navigator.share({title:"PWABuilder pwa-starter",text:"Check out the PWABuilder pwa-starter!",url:"https://github.com/pwa-builder/pwa-starter"})}notification(){Notification.requestPermission().then(n=>{n==="granted"&&new Notification("title",{body:"looks good",icon:"kisfaludy_favicon_gold.png"})})}render(){return Q`
       <app-header></app-header>
       <divsrc/kisfaludy_favicon_gold.png>
         <div id="welcomeBar">
@@ -373,11 +373,11 @@ found at http://polymer.github.io/PATENTS.txt
           opacity: 1;
         }
       }
-    `}constructor(){super()}firstUpdated(){var e;new U((e=this.shadowRoot)==null?void 0:e.querySelector("#routerOutlet")).setRoutes([{path:"/pwa-starter/",animate:!0,children:[{path:"",component:"app-home"},{path:"about",component:"app-about",action:async()=>{await Cn(()=>import("./app-about.f606a1de.js"),[])}}]}]),Oi({immediate:!0})}render(){return Q`
+    `}constructor(){super()}firstUpdated(){var e;new U((e=this.shadowRoot)==null?void 0:e.querySelector("#routerOutlet")).setRoutes([{path:"/pwa-starter/",animate:!0,children:[{path:"",component:"app-home"},{path:"about",component:"app-about",action:async()=>{await Cn(()=>import("./app-about.9e2bf360.js"),[])}}]}]),Oi({immediate:!0})}render(){return Q`
       <div>
         <main>
           <div id="routerOutlet"></div>
         </main>
       </div>
     `}};Mt=er([Ve("app-index")],Mt);export{Q as $,Ve as n,He as r,M as s};
-//# sourceMappingURL=index.8e7bd986.js.map
+//# sourceMappingURL=index.21241987.js.map
