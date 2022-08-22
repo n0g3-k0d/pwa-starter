@@ -103,7 +103,7 @@ export class AppHome extends LitElement {
   notification() {
     Notification.requestPermission().then((result) => {
       if (result === 'granted') {
-        new Notification('title',{body: 'looks good', icon: 'public/kisfaludy_favicon_gold.png'});
+        new Notification('title',{body: 'looks good', icon: 'kisfaludy_favicon_gold.png'});
       }
     });
   }
