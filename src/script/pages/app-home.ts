@@ -100,10 +100,18 @@ export class AppHome extends LitElement {
     }
   }
 
+  notification() {
+    Notification.requestPermission().then((result) => {
+      if (result === 'granted') {
+        new Notification('title',{body: 'looks good', icon: 'public/kisfaludy_favicon_gold.png'});
+      }
+    });
+  }
+
   render() {
     return html`
       <app-header></app-header>
-      <div>
+      <divsrc/kisfaludy_favicon_gold.png>
         <div id="welcomeBar">
           <fluent-card id="welcomeCard">
             <h2>${this.message}</h2>
@@ -176,6 +184,7 @@ export class AppHome extends LitElement {
           </fluent-card>
 
           <fluent-anchor href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</fluent-anchor>
+          <fluent-button @click="${this.notification}"> notification</fluent-button>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
