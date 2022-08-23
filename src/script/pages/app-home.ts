@@ -189,7 +189,6 @@ export class AppHome extends LitElement {
 
           <fluent-anchor href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</fluent-anchor>
           <fluent-button @click="${this.notification}"> notification</fluent-button>
-          <fluent-button @click="${this.iosPermission}"> iosPermission</fluent-button>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
