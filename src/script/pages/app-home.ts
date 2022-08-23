@@ -101,46 +101,16 @@ export class AppHome extends LitElement {
   }
 
   notification() {
-    if (!("Notification" in window)) {
-      // Check if the browser supports notifications
-      alert("This browser does not support desktop notification");
-    } else if (Notification.permission === "granted") {
-      // Check whether notification permissions have already been granted;
-      // if so, create a notification
-      new Notification("Hi there!");
-      // …
-    } else if (Notification.permission !== "denied") {
-      // We need to ask the user for permission
-      Notification.requestPermission().then((permission) => {
-        // If the user accepts, let's create a notification
-        if (permission === "granted") {
-          new Notification("Hi there!");
-          // …
-        }
-      });
-    }
-
-    // At last, if the user has denied notifications, and you
-    // want to be respectful there is no need to bother them anymore.
-  }
-
-  iosPermission() {
-    if ((window as any).webkit && (window as any).webkit.messageHandlers && (window as any).messageHandlers['push-permission-request']) {
-      (window as any).messageHandlers['push-permission-request'].postMessage('push-permission-request');
-    }
-    window.addEventListener('push-permission-request', (message) => {
-      if (message && (message as any).detail){
-        switch ((message as any).detail) {
-          case 'granted':
-            // permission granted
-            break;
-          default:
-            // permission denied
-            break;
-        }
+    Notification.requestPermission(function(result) {
+      alert('result');
+      if (result === 'granted') {
+        navigator.serviceWorker.ready.then(function(registration) {
+          registration.showNotification('Notification with ServiceWorker');
+        });
       }
     });
   }
+
 
   render() {
     return html`
